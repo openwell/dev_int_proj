@@ -1,0 +1,244 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "",
+    "version": "1.0.0",
+    "title": "Developer Technical Assessment API",
+    "termsOfService": "http://swagger.io/terms/",
+    "contact": {
+      "email": "info@dev-int-proj.io"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "host": "dev-int-proj.herokuapp.com/",
+  "basePath": "/api/v1",
+  "tags": [
+    {
+      "name": "Products",
+      "description": "Post, Get and Get by Id Product"
+    }
+  ],
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/products": {
+      "post": {
+        "tags": [
+          "Products"
+        ],
+        "summary": "Add a new Product",
+        "description": "",
+        "operationId": "addProduct",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "formData",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "description",
+            "in": "formData",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "price",
+            "in": "formData",
+            "description": "",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "category",
+            "in": "formData",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "color",
+            "in": "formData",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "image",
+            "in": "formData",
+            "description": "file to upload",
+            "required": true,
+            "type": "file"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Product Created",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ApiResponse"
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "401": {
+            "description": "Authentication Errors"
+          },
+          "403": {
+            "description": "Unauthorized User"
+          },
+          "422": {
+            "description": "Input Validation Error"
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Products"
+        ],
+        "summary": "Gets All Product",
+        "description": "",
+        "operationId": "getProduct",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation Or No Meetups Exist",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ApiResponse"
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/products/{productId}": {
+      "get": {
+        "tags": [
+          "Products"
+        ],
+        "summary": "Gets Product by Id",
+        "description": "",
+        "operationId": "getProductById",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "productId",
+            "in": "path",
+            "description": "Gets product by id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "401": {
+            "description": "Authentication Errors"
+          },
+          "403": {
+            "description": "Token Forbidden"
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "createProduct": {
+      "type": "object",
+      "required": [
+        "name",
+        "description",
+        "price",
+        "category",
+        "image",
+        "color"
+      ],
+      "properties": {
+        "topic": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "price": {
+          "type": "integer"
+        },
+        "category": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "color": {
+          "type": "string"
+        }
+      },
+      "xml": {
+        "name": "Product"
+      }
+    },
+    "ApiResponse": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "integer"
+        },
+        "data": {
+          "type": "array",
+          "xml": {
+            "name": "tag",
+            "wrapped": true
+          },
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "Find out more about Swagger",
+    "url": "http://swagger.io"
+  }
+}

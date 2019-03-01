@@ -1,0 +1,45 @@
+{
+  "name": "dev_int_proj",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@babel/polyfill": "^7.2.5",
+    "cors": "^2.8.5",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "express-validator": "^5.3.1",
+    "morgan": "^1.9.1",
+    "multer": "^1.4.1",
+    "pg": "^7.8.0",
+    "swagger-ui-express": "^4.0.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/register": "^7.0.0",
+    "cross-env": "^5.2.0",
+    "eslint": "^5.12.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
+  },
+  "scripts": {
+    "start": "nodemon --exec babel-node ./src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dropTable": "babel-node ./src/db/dropTable.js",
+    "createTable": "babel-node ./src/db/createTable.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/openwell/dev_int_proj.git"
+  },
+  "author": "Teami",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/openwell/dev_int_proj/issues"
+  },
+  "homepage": "https://github.com/openwell/dev_int_proj#readme"
+}
