@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section>
+      <div class="product-form">
+        <h2>Add New Product</h2>
+        <form action="" enctype="multipart/form-data" onsubmit="return myform()">
+          <label for=""
+            >Name
+            <input
+              type="text" value=""
+              class="form-control"
+              name="name"
+              required
+              id="name"
+              placeholder="Canvas"/></label
+          ><br />
+          <label for=""
+            >Description
+            <textarea
+              class="form-control"
+              name=""
+              id="description"
+              cols="30"
+              rows="5"
+              name="description"
+              required
+              placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing."
+            ></textarea
+          ></label>
+          <br />
+          <label for=""
+            >Price
+            <input
+              type="text"
+              class="form-control"
+              name="price"
+              pattern="[0-9]{1,6}"
+              title="min of 6 numbers"
+              required
+              placeholder="200"
+              id="price"/></label
+          ><br />
+          <label for=""
+            >Category
+            <input
+              type="text"
+              class="form-control"
+              name="category"
+              required
+              placeholder="Shoe"
+              id="category"/></label
+          ><br />
+          <label for=""
+            >Image
+            <input
+              type="file"
+              class="form-control"
+              name="image"
+              accept="image/gif, image/jpeg, image/jpg, image/png"
+              required
+              id="image"/></label
+          ><br />
+          <label for=""
+            >Color
+            <input
+              type="color"
+              class="form-control"
+              name="color"
+              required
+              id="color"/></label
+          ><br />
+          <button>SUBMIT</button>
+        </form>
+      </div>
+    </section>
+    <section class="section-product" id="product">
+        <!-- <div id="image-product">
+          <img src="" alt="">
+        </div>
+        <div id="details-product">
+          <h3>Name</h3>
+          <p>Category</p>
+          <h4>Description</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, omnis.</p>
+          <h5>Select Size</h5>
+          <div id="color-pick" style="background-color:aqua; width:20px; height:20px;" width></div>
+          <h1>64N</h1>
+        </div> -->
+    </section>
+
+    <script src="main.js"></script>
+  </body>
+</html>
