@@ -73,13 +73,13 @@ button:hover {
   display: flex;
 }
 #image-product{
-  /* max-width: 250px; */
+  max-width: 250px;
   height: 200px;
   flex: 1;
 }
 #image-product img{
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 #details-product{
   margin-left: 10px;

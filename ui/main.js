@@ -1,5 +1,5 @@
-const baseUr = "https://questioner1.herokuapp.com/api/v1";
-const baseUrl = `http://localhost:3000/api/v1`;
+const baseUrl = "https://dev-int-proj.herokuapp.com/api/v1";
+const baseUr = `http://localhost:3000/api/v1`;
 
 function get(url) {
   return new Request(url, {
